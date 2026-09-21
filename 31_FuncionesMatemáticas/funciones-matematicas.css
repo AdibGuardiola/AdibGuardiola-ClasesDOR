@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.caja {
+	background: #2da776;
+	font-size: 32px;
+	height: 100px;
+	padding: 20px;
+
+	&.calc {
+		width: calc(50% - 200px);
+	}
+
+	&.min {
+		width: min(500px, 50%);
+	}
+
+	&.max {
+		width: max(500px, 50%);
+	}
+}

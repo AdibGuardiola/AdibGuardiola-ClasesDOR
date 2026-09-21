@@ -1,0 +1,33 @@
+.caja {
+	font-size: 20px;
+	background: #65a665;
+}
+
+.inline {
+	display: inline;
+	/* Notas:
+		- Los elementos inline no pueden llevar ancho y padding
+		- Los elementos inline automaticamente se ponen uno al lado del otro
+	*/
+}
+
+.block {
+	display: block;
+	margin: 10px;
+	padding: 30px;
+	width: 200px;
+	height: 200px;
+}
+
+.inline-block {
+	display: inline-block;
+	margin: 10px;
+	padding: 30px;
+	width: 200px;
+	height: 200px;
+	vertical-align: top;
+}
+
+.none {
+	display: none;
+}

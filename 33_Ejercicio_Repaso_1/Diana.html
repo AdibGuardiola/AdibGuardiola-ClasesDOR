@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="diana.css">
+<title>Una diana</title>
+
+</head>
+<body>
+
+<div class="panel-top">
+  <div class="contador">Aciertos: <span id="puntos">0</span></div>
+  <div class="timer">Tiempo: <span class="tiempo" id="tiempo">15</span>s</div>
+</div>
+<!-- // dentro de ul siempre li -->
+<ul class="tablero">
+  <li class="casilla"><button class="diana"></button></li>
+</ul>
+
+<script>
+let puntos = 0;
+const marcador = document.getElementById("puntos");
+const tiempo = document.getElementById("tiempo");
+
+// clic en la diana
+document.querySelector(".diana").addEventListener("click", e => {
+  puntos++;
+  marcador.textContent = puntos;
+  e.target.disabled = true;
+});
+
+// cuenta atrás simple
+let t = 15;
+const tick = setInterval(()=>{  t--;  tiempo.textContent = t;  if(t<=0){ clearInterval(tick); }},1000);
+</script>
+
+</body>
+</html>

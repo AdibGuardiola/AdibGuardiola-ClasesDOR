@@ -1,0 +1,65 @@
+.input {
+	padding: 10px;
+	margin: 10px;
+	border: 2px solid #c2c2c2;
+	border-radius: 5px;
+
+	&::placeholder {
+		color: blue;
+		opacity: 0.5;
+	}
+
+	&:hover {
+		border: 2px solid #7e7eff;
+	}
+
+	&:focus {
+		outline: 3px solid #4545ff;
+		border: 2px solid transparent;
+	}
+
+	&:disabled {
+		background: #e7e7e7;
+	}
+
+	&:invalid {
+		outline: 2px solid red;
+		border: 2px solid transparent;
+		color: red;
+	}
+
+	&:read-only {
+		border: none;
+		color: #000;
+		background: #e7e7e7;
+		cursor: default;
+	}
+}
+
+button {
+	display: inline-block;
+	padding: 10px;
+
+	&:disabled {
+		opacity: 0.4;
+	}
+
+	&[type='submit'] {
+		background: green;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}
+
+input[type='radio'] {
+	&:checked + label {
+		color: blue;
+		font-weight: bold;
+	}
+
+	&:indeterminate + label {
+		color: red;
+	}
+}

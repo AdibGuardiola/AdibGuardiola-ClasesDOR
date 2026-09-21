@@ -1,0 +1,21 @@
+body {
+	background: #f2f2f2;
+}
+
+.contenedor {
+	width: 500px;
+	height: 500px;
+	background: #fff;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	/* overflow: visible | hidden | scroll | auto  */
+	/* overflow: auto; */
+	overflow: auto;
+
+	.parrafo {
+		width: 150%;
+		margin: 0;
+	}
+}

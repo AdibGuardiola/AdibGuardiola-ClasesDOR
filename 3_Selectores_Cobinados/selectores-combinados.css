@@ -1,0 +1,33 @@
+.menu {
+	background: lightgray;
+}
+
+/* // 1.Queremos cambiar los enlaces a un color rojo  */
+.menu a {
+	color: red;
+}
+
+/* 2.Esto va a afectar todos los elementos o enlaces tipo <a> */
+.menu  a {
+	font-size: 24px;
+}
+
+
+/* 3.Esto afecta a los hijos directos de menu ,no a todos los elementos o enlaces que tienen la etiqueta <a> */
+/* Selector de Hijos */
+.menu > a {
+	font-size: 24px;
+}
+
+/* 4.Con esto seleccionamos el primer párrafo h3,sin punto, + p de primer elemento */
+/* Selector de hermanos 
+h3 + p + p {
+	color: blue;
+	font-size: 22px;
+} */
+
+/* 5.Selector general */
+h3 ~ p {
+	color: red;
+	font-size: 30px;
+}

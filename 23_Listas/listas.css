@@ -1,0 +1,32 @@
+body {
+	font-size: 20px;
+	background: #f2f2f2;
+}
+
+.lista,
+.lista ul {
+	/* list-style-image: url('./imagenes/check.svg'); */
+	list-style: square;
+
+	li::marker {
+		color: red;
+		font-size: 20px;
+	}
+}
+
+.lista2,
+.lista2 ul {
+	background: #fff;
+	margin: 40px;
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	padding: 0;
+
+	li {
+		padding: 20px;
+	}
+
+	li:nth-child(even) {
+		background: #f2f2f2;
+	}
+}

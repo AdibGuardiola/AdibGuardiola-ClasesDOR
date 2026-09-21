@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="display.css" />
+		<title>Elementos Inline y Block</title>
+	</head>
+	<body>
+		<!-- Existen 2 tipos de comportamiento para los elementos de HTML: -->
+		<!-- 
+			Block - Bloque
+			- Abarcan el 100% del espacio disponble
+			- Pero con CSS les podemos especificar otro tamaño
+		-->
+		<div class="caja inline">Hola soy una caja div</div>
+		<p class="caja inline">Hola soy un parrafo</p>
+
+		<!-- 
+			Inline - En linea 
+			- Abarcan solo el espacio que necesitan para el contenido.
+			- Pero con CSS podemos cambiarles el tipo de elemento a bloque y luego cambiarles el tamaño.
+		-->
+		<a class="caja inline-block" href="#">Enlace</a>
+		<img class="caja inline-block" width="200" src="./imagenes/bosque.png" alt="" />
+		<span class="caja inline-block">Hola soy un texto dentro de un span</span>
+
+		<h1 class="caja none">Hola!</h1>
+	</body>
+</html>

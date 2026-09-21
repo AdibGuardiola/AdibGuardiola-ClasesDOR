@@ -1,0 +1,60 @@
+
+
+
+
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	font-size: 50px;
+	&:hover {
+		background: rgb(211, 16, 16);
+		color: #ffffff;
+	}
+
+	&:active {
+		background: #dadae4;
+	}
+
+	&:visited {
+		color: #858585;
+	}
+}
+
+.articulos {
+	p:hover {
+		background: #414141;
+		color: #fff;
+	}
+}
+
+.cajas {
+	div {
+		background: lightcyan;
+		height: 50px;
+		margin-bottom: 5px;
+
+		/* :first-child - Representa el primer hijo */
+		&:first-child {
+			background: red;
+		}
+
+		/* :nth-child(x) - Representa el hijo especificado en la función, empezando desde el inicio */
+		&:nth-child(2) {
+			background: lightblue;
+		}
+
+		/* :last-child - Representa el ultimo hijo */
+		&:last-child {
+			background: lime;
+		}
+
+		/* :nth-last-child(x) - Representa el segundo hijo empezando desde el final */
+		&:nth-last-child(2) {
+			background: pink;
+		}
+	}
+}

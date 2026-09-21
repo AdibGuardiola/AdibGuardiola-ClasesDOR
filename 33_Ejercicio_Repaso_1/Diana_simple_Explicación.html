@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Caja con contador</title>
+<style>
+  body{ font-family:sans-serif; text-align:center; margin-top:40px; }
+
+  /* Panel superior */
+  .panel-top{
+    display:flex; 
+    justify-content:space-around; 
+    margin-bottom:20px;
+  }
+  .contador, .timer{
+    font-size:20px;
+    font-weight:bold;
+  }
+
+  /* Caja */
+  .caja{
+    width:100px; 
+    height:100px; 
+    background:#3498db;   /* azul */
+    border:none; 
+    border-radius:10px;
+    cursor:pointer;
+    /* pointer-events: none;  <-- QUITADO para permitir clics */
+  }
+  .caja:active{ 
+    background:#2ecc71;   /* verde al hacer clic */
+  }
+  .caja:disabled{ 
+    background:#720e0e;   /* color cuando está deshabilitada */
+    cursor:not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<div class="panel-top">
+  <div class="contador">Aciertos: <span id="puntos">0</span></div>
+  <div class="timer">Tiempo: <span id="tiempo">15</span>s</div>
+</div>
+
+<button class="caja" id="caja"></button>
+
+<script>
+  // variables
+  let puntos = 0;
+  const marcador = document.getElementById("puntos");
+  const tiempo = document.getElementById("tiempo");
+  const caja = document.getElementById("caja");
+
+  // habilitar al inicio
+  caja.disabled = false;
+
+  // clic en la caja
+  caja.addEventListener("click", () => {
+    puntos++;
+    marcador.textContent = puntos;
+    // NO deshabilitar en cada clic
+  });
+
+  // cuenta atrás simple
+  let t = 15;
+  const tick = setInterval(()=>{
+    t--;
+    tiempo.textContent = t;
+    if(t <= 0){
+      clearInterval(tick);
+      caja.disabled = true; // deshabilitar caja al acabar tiempo
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>

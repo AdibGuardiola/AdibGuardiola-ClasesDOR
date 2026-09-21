@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tiro al blanco — CSS + JS sencillo</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" href="target.css">
+
+</head>
+<body>
+
+<h1>Tiro al blanco</h1>
+<h2>Dianas con movimiento, cuenta atrás y fin automático</h2>
+
+<div class="panel-top">
+  <div class="badge">Aciertos: <span id="puntos">0</span></div>
+  <div class="timer">
+    <span>Tiempo:</span>
+    <span class="tiempo"></span>s
+    <div class="barra"><i></i></div>
+  </div>
+</div>
+
+<ul class="tablero">
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+  <li class="casilla"><button class="diana"></button></li>
+</ul>
+
+<!-- Pantalla de fin -->
+<div class="fin">
+  <div class="panel">
+    <h3>¡Tiempo!</h3>
+    <p>Puntuación final: <span id="puntosFinal">0</span></p>
+    <a href="./">Jugar de nuevo</a>
+  </div>
+</div>
+
+<script>
+let puntos = 0;
+const marcador = document.getElementById("puntos");
+const puntosFinal = document.getElementById("puntosFinal");
+
+// cada diana suma 1 y se desactiva
+document.querySelectorAll(".diana").forEach(boton => {
+  boton.addEventListener("click", () => {
+    puntos++;
+    marcador.textContent = puntos;
+    puntosFinal.textContent = puntos;
+    boton.disabled = true;
+  });
+});
+</script>
+
+</body>
+</html>

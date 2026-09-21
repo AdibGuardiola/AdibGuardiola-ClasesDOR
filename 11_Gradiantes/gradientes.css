@@ -1,0 +1,46 @@
+.caja {
+	width: 500px;
+	height: 500px;
+	background: #000;
+	margin: 10px;
+}
+
+.gradiente-linear {
+	/* background: linear-gradient(30deg, blue, black); */
+	/* Direcciónes
+		Direcciones basicas
+		- to top: Desde abajo hacia arriba.
+		- to right: Desde la izquierda hacia la derecha.
+		- to bottom: Desde arriba hacia abajo.
+		- to left: Desde la derecha hacia la izquierda.
+
+		Direcciones diagonales:
+		- to top left: Desde abajo-derecha hacia arriba-izquierda.
+		- to top right: Desde abajo-izquierda hacia arriba-derecha.
+		- to bottom left: Desde arriba-derecha hacia abajo-izquierda.
+		- to bottom right: Desde arriba-izquierda hacia abajo-derecha.
+
+		Direcciones angulares:
+		- to 30deg: Hacia 30 grados
+	*/
+
+	background: #c31432; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #240b36, #c31432); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#240b36,
+		#c31432
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradiente-radial {
+	background: radial-gradient(lime, black);
+}
+
+.gradiente-conico {
+	background: conic-gradient(yellow, orangered);
+}
+
+.gradiente-imagen {
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)), url('./imagenes/bosque.png');
+}

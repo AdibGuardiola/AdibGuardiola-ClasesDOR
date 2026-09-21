@@ -1,0 +1,32 @@
+button {
+	background: #000;
+	color: #fff;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+	padding: 30px 60px;
+	margin: 20px;
+	border-radius: 10px;
+
+	/* transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1); */
+
+	/* Funciones de tiempo
+	    ease - inicio lento, despues rapido y termina lento. 
+		linear - misma velocidad desde el inicio hasta el final.
+		ease-in - inicio lento.
+		ease-out - final lento. 
+		ease-in-out - Inicio lento y final lento. 
+		cubic-bezier(n,n,n,n) - función de tiempo personalizada. 
+
+		https://easings.net
+	*/
+
+	transition: all 300ms ease;
+
+	&:hover {
+		background: #159215;
+		transform: scale(1.1);
+	}
+}

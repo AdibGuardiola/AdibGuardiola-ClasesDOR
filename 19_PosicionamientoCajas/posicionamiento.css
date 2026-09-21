@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f2f2f2;
+}
+
+.caja {
+	width: 100px;
+	height: 100px;
+	background: #262626;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 40px;
+	padding: 40px;
+	margin: 20px;
+}
+
+.posicionada {
+	/* position: static; */
+	/* position: relative; */
+	/* position: absolute; */
+	/* position: fixed; */
+	/* position: sticky; */
+	position: sticky;
+	background: #57af46;
+	top: 20px;
+    left:  200px;
+	
+}
+
+
+.caja-padre {
+	width: 500px;
+	height: 500px;
+	position: relative;
+	
+}
+
+
+ 
+/* Cuando el contenedor padre tiene un posicionamiento Relativo caja  hijo si tiene un posicionameinto absoluto va a tomar las coordenadas. */
+
+/* Voy a colocar a la caja dos dentro de un contenedor
+<div class="caja caja-padre">
+		<div class="caja posicionada">2</div>
+		</div> */

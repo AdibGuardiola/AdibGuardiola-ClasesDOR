@@ -1,0 +1,29 @@
+.caja {
+	width: 200px;
+	height: 200px;
+	background: #f2f2f2;
+	font-size: 40px;
+	margin: 40px;
+	color: #000;
+	border: 2px solid currentColor;
+	padding: 10px;
+	border-radius: 5px;
+	position: absolute;
+
+	&.caja-1 {
+		top: 0px;
+		left: 0px;
+		z-index: 1;
+	}
+
+	&.caja-2 {
+		top: 100px;
+		left: 100px;
+		z-index: 2;
+	}
+
+	&.caja-3 {
+		top: 200px;
+		left: 200px;
+	}
+}

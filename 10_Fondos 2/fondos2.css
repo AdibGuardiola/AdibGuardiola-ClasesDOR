@@ -1,0 +1,28 @@
+body {
+	background: #000;
+}
+
+.contenedor {
+	width: 1000px;
+	height: 700px;
+
+	background: #ccc;
+	background-image: url('./imagenes/bosque.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
+}
+
+article {
+	color: #fff;
+	background: #000;
+	padding: 20px;
+	width: 500px;
+}
+
+body {
+	background-image: url('https://images.unsplash.com/photo-1734639528206-59e0864b3863?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+}

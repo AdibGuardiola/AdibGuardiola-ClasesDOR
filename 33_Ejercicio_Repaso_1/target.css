@@ -1,0 +1,80 @@
+
+/* ======== VARIABLES ======== */
+:root{
+  --agua:#64ddf3;
+  --tierra:#724c20;
+  --primario:#20c0ff;
+  --texto:#333;
+  --fondo:#e9b58b;
+  --dur-juego:15s;
+  --delay-aparece:1.2s;
+}
+/* ======== BASE ======== */
+*{ box-sizing:border-box; }
+body{ margin:0; text-align:center; background:var(--fondo); color:var(--texto);
+  font-family:'Open Sans','Helvetica','Arial',sans-serif; }
+h1{ margin:18px 0 6px; margin-top:40px; font-size:24px; }
+h2{ margin:-4px 0 18px; font-size:14px; font-weight:400; opacity:.9; }
+
+/* ======== PANEL SUPERIOR ======== */
+.panel-top{
+  width:min(640px, 92vw); margin:0 auto 12px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.badge{
+  background:#fff; border:2px solid var(--primario); border-radius:12px;
+  padding:8px 12px; font-weight:700; color:var(--primario);
+}
+.timer{ display:flex; align-items:center; gap:8px; }
+.tiempo{ font-variant-numeric: tabular-nums; min-width:3ch; text-align:right; }
+.tiempo::before{ content:"15"; animation: cuentaAtras var(--dur-juego) steps(15) forwards; }
+
+
+/* ======== TABLERO ======== */
+.tablero{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;
+  width:min(620px, 92vw); margin:8px auto 24px; padding:0; }
+.casilla{ list-style:none; height:150px; position:relative; overflow:hidden;
+  background:var(--agua); border:4px solid #fff; border-radius:10px;
+  box-shadow:0 4px 20px rgba(0,0,0,.12) inset; }
+.casilla::after{ content:""; position:absolute; left:0; bottom:0; width:100%; height:62%;
+  background:var(--tierra); z-index:2; }
+
+/* ======== DIANA ======== */
+.diana{ position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:54px; height:54px; border-radius:50%; border:6px solid red; cursor:crosshair;
+  z-index:1; background:radial-gradient(red 10%, white 10% 30%, red 30% 50%, white 50% 80%, red 80%);
+  opacity:0; pointer-events:none;
+  animation: subeBaja 2.4s ease-in-out infinite alternate, aparecerDiana 0s forwards;
+  animation-delay:0s, var(--delay-aparece); animation-fill-mode:none, forwards; }
+.casilla:nth-child(1) .diana{ animation-duration:2s, 0s; }
+.casilla:nth-child(2) .diana{ animation-duration:3s, 0s; }
+.casilla:nth-child(3) .diana{ animation-duration:1.5s, 0s; }
+.casilla:nth-child(4) .diana{ animation-duration:2.8s, 0s; }
+.casilla:nth-child(5) .diana{ animation-duration:2.2s, 0s; }
+.casilla:nth-child(6) .diana{ animation-duration:3.5s, 0s; }
+.casilla:nth-child(7) .diana{ animation-duration:1.8s, 0s; }
+.casilla:nth-child(8) .diana{ animation-duration:2.6s, 0s; }
+.casilla:nth-child(9) .diana{ animation-duration:2.1s, 0s; }
+.diana:active{ transform:translateX(-50%) scale(.9); filter:grayscale(1) opacity(.85); }
+.diana:disabled{ filter:grayscale(1) opacity(.6); }
+
+/* ======== FIN DEL JUEGO ======== */
+.fin{ position:fixed; inset:0; display:grid; place-items:center;
+  background:#ffffff; color:#111; z-index:9999; opacity:0; visibility:hidden; pointer-events:none;
+  animation: finIn .25s ease forwards; animation-delay:var(--dur-juego); }
+.fin .panel{ background:#fff; padding:20px 24px; border-radius:14px; text-align:center;
+  border:1px solid #e6e6e6; box-shadow:0 10px 40px rgba(0,0,0,.2); }
+.fin h3{ margin:0 0 8px; font-size:24px; }
+.fin p{ margin:2px 0 12px; opacity:.8; }
+
+/* ======== ANIMACIONES ======== */
+@keyframes subeBaja{ 0%{top:0} 50%{top:50%} 100%{top:0} }
+@keyframes aparecerDiana{ to{opacity:1; pointer-events:auto;} }
+@keyframes finIn{ to{opacity:1; visibility:visible; pointer-events:auto;} }
+@keyframes agotar{ to{ transform:scaleX(0); } }
+@keyframes cuentaAtras{
+  0%{content:"15"} 6.6%{content:"14"} 13.3%{content:"13"} 20%{content:"12"}
+  26.6%{content:"11"} 33.3%{content:"10"} 40%{content:"9"} 46.6%{content:"8"}
+  53.3%{content:"7"} 60%{content:"6"} 66.6%{content:"5"} 73.3%{content:"4"}
+  80%{content:"3"} 86.6%{content:"2"} 93.3%{content:"1"} 100%{content:"0"}
+}

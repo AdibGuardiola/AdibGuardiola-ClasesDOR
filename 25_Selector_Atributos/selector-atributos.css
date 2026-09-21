@@ -1,0 +1,24 @@
+[data-id] {
+	font-size: 20px;
+	color: blue;
+}
+
+[data-id='2'] {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: underline;
+	color: red;
+	font-size: 30px;
+}
+
+[href*="https://www.falconmasters.com"]
+{
+	text-decoration: none;
+	color: blue;
+}
+
+input[type='email'] {
+	outline: 2px solid blue;
+}

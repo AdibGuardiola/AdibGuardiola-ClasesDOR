@@ -1,0 +1,68 @@
+/* <span class="primera-letra">L</span>
+
+.primera-letra{
+
+font-size: 20px;
+font-weight: bold;
+
+} */
+
+
+
+
+p {
+	&::first-letter {
+		font-size: 40px;
+		font-weight: bold;
+	}
+
+	&::first-line {
+		background: #c9a9cf;
+		font-size: 18px;
+		line-height: 50px;
+	}
+}
+
+* {
+	&::selection {
+		background: red;
+		color: #fff;
+	}
+}
+
+.caja {
+	background: #f9a03f;
+	height: 150px;
+	width: 150px;
+
+	&::before {
+		content: 'Contenido antes de la caja.';
+		display: block;
+		background: #000;
+		color: #fff;
+	}
+
+	&::after {
+		content: 'Contenido despues de la caja.';
+		display: block;
+		background: #000;
+		color: #fff;
+	}
+}
+
+.lista {
+	li {
+		&::marker {
+			content: ' + ';
+			font-size: 22px;
+			color: red;
+		}
+	}
+}
+
+input {
+	&::placeholder {
+		color: blue;
+		font-weight: bold;
+	}
+}

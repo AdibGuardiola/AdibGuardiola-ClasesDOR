@@ -1,0 +1,56 @@
+/* Prioridad:
+	1. Estilos inline
+	<h3 style="color: red">
+
+	2. Selector via id
+	#titulo-1 {}
+
+	3. Selector via clase
+	.titulo {}
+
+	4. Selector de elemento
+	h3 {}
+*/
+
+/* Ejemplo #1 */
+/* h3 {
+	color: red;
+	font-size: 30px;
+}
+
+.titulo {
+	color: blue;
+}
+
+#titulo-1 {
+	font-size: 60px;
+	color: green;
+} */
+
+/* Ejemplo #2 */
+/* main section article h3 {
+	color: red;
+}
+
+.titulo {
+	color: blue;
+} */
+
+/* Ejemplo #3 */
+.blog .post .titulo {
+	color: blue;
+}
+
+@media screen and (max-width: 700px) {
+	body {
+		background: #2e2e2e;
+		color: #fff;
+	}
+	/* .blog .post .titulo {
+		color: red;
+	} */
+
+	.blog .titulo {
+		color: red !important;
+	}
+}

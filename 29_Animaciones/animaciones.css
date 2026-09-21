@@ -1,0 +1,61 @@
+.caja {
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	padding: 20px;
+	font-size: 28px;
+	border-radius: 5px;
+	background: #43ae75;
+
+	animation-name: cambiarAncho;
+	animation-duration: 3s;
+	animation-delay: 0s;
+	animation-timing-function: ease;
+	/* animation-iteration-count: infinite; */
+	/* animation-direction: alternate-reverse; */
+
+	/* Direccion de la animación
+		Suele ser muy útil cuando usamos cuenta infinita.
+		- normal - Hacia adelante (default)
+		- reverse - En reversa (empieza por atras)
+		- alternate - Primero hacia adelante y luego en reversa.
+		- alternate-reverse - Primero en reversa y luego hacia adelante 
+	*/
+
+	/* Modo de relleno 
+    - none - (default)
+    - forwards - El elemento mantiene los estilos del ultimo keyframe.    
+	- backwards - El elemento obtiene los estilos del primer keyframe y los mantendra durante el periodo de delay. 
+    - both - Es una combinación entre forwards y backwards.
+	*/
+	animation-fill-mode: both;
+
+	&:hover {
+		/* animation: nombre duración función-tiempo delay repeticiones dirección */
+		animation: agitar 0.3s ease-in 0s infinite forwards;
+	}
+}
+
+@keyframes cambiarAncho {
+	from {
+		width: 200px;
+	}
+
+	to {
+		width: 400px;
+	}
+}
+
+@keyframes agitar {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}

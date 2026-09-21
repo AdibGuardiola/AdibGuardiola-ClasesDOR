@@ -1,0 +1,16 @@
+.caja {
+	width: 400px;
+	margin: 100px 0;
+	background: #ccc;
+	transition: all ease 0.5s;
+
+	img {
+		width: 100%;
+		vertical-align: top;
+		border-radius: 15px;
+	}
+}
+
+.checkbox:checked + .caja {
+	transform: rotate(90deg) scale(0.5);
+}

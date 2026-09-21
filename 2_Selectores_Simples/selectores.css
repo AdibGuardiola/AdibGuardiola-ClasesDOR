@@ -1,0 +1,45 @@
+/* Selector universal */
+/* * {
+	color: blue;
+} */
+
+/* Selectores simples */
+/* h1 {
+	color: blue;
+} */
+
+/* Selector de grupos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: red;
+}
+
+
+
+main p a {
+	font-size: 26px;
+	color: blue;
+}
+
+/* Selector de clases */
+.enlace {
+	color: red;
+}
+
+header .enlace {
+	font-size: 22px;
+}
+
+/* Selector de id */
+/* #especial {
+	color: darkblue;
+} */
+
+.especial {
+	font-size: 25px;
+	color: rgb(139, 0, 7);
+}

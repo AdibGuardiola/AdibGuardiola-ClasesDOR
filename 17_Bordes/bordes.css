@@ -1,0 +1,65 @@
+body {
+	background: #f2f2f2;
+}
+
+p {
+	padding: 40px;
+	margin: 40px;
+	background: #fff;
+
+	&.solid {
+		border: 10px solid #000;
+	}
+
+	&.dotted {
+		border: 10px dotted #000;
+	}
+
+	&.dashed {
+		border: 10px dashed #000;
+	}
+
+	&.double {
+		border: 10px double #000;
+	}
+
+	&.groove {
+		border: 30px groove red;
+	}
+
+	&.ridge {
+		border: 30px ridge red;
+	}
+
+	&.inset {
+		border: 30px inset lightblue;
+	}
+
+	&.outset {
+		border: 30px outset lightblue;
+	}
+
+	&.none {
+		border: none;
+	}
+
+	&.transparent {
+		border: 10px solid transparent;
+	}
+
+	&.transparent:hover {
+		border: 10px solid #000;
+	}
+
+	&.multi-borde {
+		border-top: 20px solid orange;
+		border-bottom: 20px dashed blue;
+		border-left: 20px double black;
+		border-right: 5px dotted black;
+	}
+
+	&.radius {
+		border: 10px solid #000;
+		border-radius: 100px;
+	}
+}

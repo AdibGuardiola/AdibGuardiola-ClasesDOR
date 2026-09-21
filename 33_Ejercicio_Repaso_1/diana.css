@@ -1,0 +1,99 @@
+
+:root{
+  --agua:#64ddf3;
+  --tierra:#724c20;
+  --primario:#20c0ff;
+  --fondo:#e9b58b;
+  --dur-juego:15s;
+  --delay-aparece:1.2s;
+}
+body{ margin:0; text-align:center; background:var(--fondo); font-family:sans-serif; }
+
+/* Panel superior */
+.panel-top{
+  margin:20px auto;
+  display:flex; justify-content:space-between; 
+  align-items:center;
+  width:300px;
+}
+.contador{ 
+  background:#fff; 
+  border:2px solid var(--primario);
+  border-radius:12px;
+  padding:6px 12px; 
+  font-weight:700; 
+  color:var(--primario);
+ }
+.timer{
+  display:flex; 
+  align-items:center;
+  gap:8px; 
+}
+.tiempo{
+  min-width:2ch; 
+  text-align:right; 
+  font-variant-numeric: tabular-nums; }
+
+/* Casilla */
+.tablero{ 
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px; 
+  width:150px; 
+  margin:20px auto; 
+  padding:0;
+  }
+
+.casilla{ 
+  height:150px; 
+  position:relative;
+  /*overflow:hidden;*/
+  background:var(--agua); 
+  border:4px solid #fff; 
+  border-radius:10px;
+  box-shadow:0 4px 20px rgba(0,0,0,.12) inset;
+  list-style:none;   
+ }
+
+.casilla::after
+{ content:""; 
+ position:absolute; 
+ left:0; bottom:0;
+ width:100%; height:62%;
+ background:var(--tierra); 
+ z-index:2; 
+}
+/*default; → la flecha normal.
+pointer; → la “manita” de los enlaces.
+text; → el cursor de texto (barra vertical).
+wait; → reloj o círculo de espera.
+move; → flecha de mover.
+grab; → mano para arrastrar.
+none; → oculta el cursor.*/
+/* Diana */
+.diana{ position:absolute; 
+  top:0; left:50%; 
+  transform:translateX(-50%);
+  width:54px; 
+  height:54px; 
+  border-radius:50%; 
+  border:6px solid red;
+  cursor:grab;
+  z-index:1;
+   background:radial-gradient(red 10%, white 10% 30%, red 30% 50%, white 50% 80%, red 80%);
+  opacity:0;
+  pointer-events:none;
+  animation: subeBaja 2s ease-in-out infinite alternate, aparecerDiana 0s forwards;
+  animation-delay: 0s, var(--delay-aparece); 
+  animation-fill-mode:none, forwards; 
+ }
+ .diana:active{ 
+  transform:translateX(-50%) scale(.9); 
+  filter:grayscale(1) opacity(.85); 
+  }
+ .diana:disabled{ 
+  filter:grayscale(1) opacity(.6); 
+   }
+
+ @keyframes subeBaja{ 0%{top:0} 50%{top:50%} 100%{top:0} }
+ @keyframes aparecerDiana{ to{opacity:1; pointer-events:auto;} }
